@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+stub:
+  rest:
+    responses:
+      - method: GET
+        path: /customers/123
+        status: 200
+        headers:
+          Content-Type: application/json
+        body: |
+          {
+            "id": 123,
+            "name": "Taro Stub"
+          }
+      - method: POST
+        path: /orders
+        status: 201
+        headers:
+          Content-Type: application/json
+          Location: /orders/98765
+        body: |
+          {
+            "orderId": 98765,
+            "status": "CREATED"
+          }
